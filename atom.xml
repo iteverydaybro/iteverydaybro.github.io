@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iteverydaybro.github.io/"/>
-  <updated>2019-07-22T13:14:19.108Z</updated>
+  <updated>2019-10-05T16:31:04.245Z</updated>
   <id>https://iteverydaybro.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>data-structure-chapter-two</title>
+    <link href="https://iteverydaybro.github.io/2019/10/05/data-structure-chapter-two/"/>
+    <id>https://iteverydaybro.github.io/2019/10/05/data-structure-chapter-two/</id>
+    <published>2019-10-05T15:52:40.000Z</published>
+    <updated>2019-10-05T16:31:04.245Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="什么是数组"><a href="#什么是数组" class="headerlink" title="什么是数组"></a>什么是数组</h2><p>把数据码成一排进行存放，索引可以有语意，也可以没有语意</p><h1 id="数组优点"><a href="#数组优点" class="headerlink" title="数组优点"></a>数组优点</h1><p>1.数组最大的优点：快速查询；<br>2.数组最好应用于“索引有语意”的情况；</p><h1 id="制作属于我们自己的数组类"><a href="#制作属于我们自己的数组类" class="headerlink" title="制作属于我们自己的数组类"></a>制作属于我们自己的数组类</h1><h2 id="数组中添加元素"><a href="#数组中添加元素" class="headerlink" title="数组中添加元素"></a>数组中添加元素</h2><h2 id="数组中查询元素和修改元素"><a href="#数组中查询元素和修改元素" class="headerlink" title="数组中查询元素和修改元素"></a>数组中查询元素和修改元素</h2><h2 id="数组中是否包含搜索删除元素"><a href="#数组中是否包含搜索删除元素" class="headerlink" title="数组中是否包含搜索删除元素"></a>数组中是否包含搜索删除元素</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;h1 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h
+      
+    
+    </summary>
+    
+      <category term="Data Structrue" scheme="https://iteverydaybro.github.io/categories/Data-Structrue/"/>
+    
+    
+      <category term="Data Structure" scheme="https://iteverydaybro.github.io/tags/Data-Structure/"/>
+    
+      <category term="Array" scheme="https://iteverydaybro.github.io/tags/Array/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>data-structure-chapter-one</title>
+    <link href="https://iteverydaybro.github.io/2019/10/05/data-structure-chapter-one/"/>
+    <id>https://iteverydaybro.github.io/2019/10/05/data-structure-chapter-one/</id>
+    <published>2019-10-05T15:10:45.000Z</published>
+    <updated>2019-10-08T02:38:45.861Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>本文是学习数据结构的学习笔记.主要介绍了下数据结构相关概念 为什需要学好数据结构以及数据结构的分类。</p><h1 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h1><p>为了更好的理解数据结构的概念，先对数据结构中的一些常用名词和术语给出解释。</p><h2 id="1-数据"><a href="#1-数据" class="headerlink" title="1.数据"></a>1.数据</h2><p>数据是信息的载体，是对客观事物的描述，这种描述形式可以是数 字符以及所有能输入到计算机中被计算机程序识别 处理的信息的集合。</p><h2 id="2-数据项"><a href="#2-数据项" class="headerlink" title="2.数据项"></a>2.数据项</h2><p>数据项是具有独立意义的不可分的最小数据单位，它是对数据结构中的数据元素属性的抽象描述。<br>数据项也被称为字段 域。</p><h2 id="3-数据元素"><a href="#3-数据元素" class="headerlink" title="3.数据元素"></a>3.数据元素</h2><p>数据元素是数据的基本单位，是对一个客观实体数据形式的抽象描述。<br>一个数据元素可以由一个或若干个数据项组成。<br>数据元素也被称为结点或记录。</p><h2 id="4-数据对象"><a href="#4-数据对象" class="headerlink" title="4.数据对象"></a>4.数据对象</h2><p>具有相同性质的数据元素的集合就是一个数据对象，它是 数据的一个子集。</p><h2 id="5-数据类型"><a href="#5-数据类型" class="headerlink" title="5.数据类型"></a>5.数据类型</h2><p>数据类型是将客观事物集抽象描述成具有相同性质的数据元素的集合，以及对这个数据集合中数据元素的一组操作的整体描述。<br>数据类型封装了数据存储与操作的具体细节。<br>数据类型分为原子类型和结构类型</p><h3 id="原子类型"><a href="#原子类型" class="headerlink" title="原子类型"></a>原子类型</h3><p>如果一个数据元素由一个数据项组成，这个数据元素的类型就是这个结点的数据类型，在逻辑上不可分解。</p><h3 id="结构类型"><a href="#结构类型" class="headerlink" title="结构类型"></a>结构类型</h3><p>如果由多个不同类型的数据项组成，则这个数据原色的类型就是由各数据项类型构造而成的构造类型，值由若干成分按某种结构组成。</p><h2 id="6-抽象数据类型"><a href="#6-抽象数据类型" class="headerlink" title="6.抽象数据类型"></a>6.抽象数据类型</h2><p>抽象数据类型是抽象的数据模型，是用户在数据类型基础上定义的新数据类型。<br>抽象数据类型包含数据组成结构的定义以及对建立在其上的处理操作的描述。</p><h2 id="数据结构的概念"><a href="#数据结构的概念" class="headerlink" title="数据结构的概念"></a>数据结构的概念</h2><p>数据结构是指数据之间的相互关系（即数据的组织形式）及建立在这些数据上的运算方法的集合。</p><h2 id="数据的逻辑结构"><a href="#数据的逻辑结构" class="headerlink" title="数据的逻辑结构"></a>数据的逻辑结构</h2><p>数据结构在形式是那个可以定义为一个二元组：<br>Data_Structure=(D,R),其中D是数据元素的有限集合，R是D上关系的有限集合。<br>数据结构是相互之间存在一种或多种特定关系的数据元素的集合，这个关系特指数据元素之间的逻辑关系，也称为数据的逻辑结构，它与在计算机上的具体数据存储无关。<br>数据的逻辑结构可以分为3种典型结构：集合 线性结构 非线性结构</p><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合中元素间为松散关系，只是同属于一个集合而已，如各种颜色属于色彩集合。</p><h3 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h3><p>线性结构的逻辑特征是有且仅有一个起始结点和一个终端结点，并且所有的结点只有一个直接前驱结点和一个直接后继结点，如线性表 队列等，结点之间是一对一的关系。</p><h3 id="非线性结构"><a href="#非线性结构" class="headerlink" title="非线性结构"></a>非线性结构</h3><p>非线性结构的特征是一个结点可能有多个直接前驱结点或多个直接后继结点，如树 图等，树的结点之间是一对多关系，图的结点是多对多关系。</p><h2 id="数据的存储结构"><a href="#数据的存储结构" class="headerlink" title="数据的存储结构"></a>数据的存储结构</h2><p>数据的存储结构是数据的逻辑结构在计算机内部的表示或实现，又称为数据的物理结构，它包括数据元素的表示和关系的表示。它不同于逻辑结构，且与计算机程序语言相关。</p><h3 id="顺序存储方法"><a href="#顺序存储方法" class="headerlink" title="顺序存储方法"></a>顺序存储方法</h3><p>该方法是将逻辑上相邻的结点存储在物理位置上也相邻的存储单元中，结点之间的逻辑关系由存储单元的邻接关系来表示（也就是说，只存储结点的值，不存储结点之间的关系），这种存储表示称为顺序存储结构。<br>顺序存储的主要特点：<br>1.结点中只有自身信息域，没有连接信息域，因此存储密度大，存储空间利用率高。<br>2.可以通过计算直接确定数据结构中的第i个结点的存储位置Li，计算公式：<br>Li = L0+（i-1）*m<br>其中L0为第一个结点的存储位置，m为每个结点所占用的存储单元个数。<br>3.插入和删除都会引起大量的结点移动。</p><h3 id="链式存储方法"><a href="#链式存储方法" class="headerlink" title="链式存储方法"></a>链式存储方法</h3><p>链式存储方法相对于相邻结点所存储的物理位置没有要求，可以不相邻，结点间的逻辑关系由附加的指针（指向结点的存储位置）来表示，指针指向结点的邻接结点，这样将所有结点串联起来在一起，称为链式存储。<br>链式存储方法不仅存储结点的值，还存储结点之间的关系。<br>链式存储方法中的结点由2部分组成：<br>1.存储结点本身的值：数据域<br>2.存储结点的各后继结点的存储单元地址：指针域</p><p>链式存储结构的主要特点：<br>1.结点中除自身信息外，还有表示连接信息的指针域，因此比顺序存储结构的存储密度小，存储空间利用率低。<br>2.逻辑上相邻的结点，物理上不必邻接，可用于线性表，树，图等多种逻辑结构的存储表示。<br>3.插入和删除操作灵活方便，不必移动结点，只要改变结点中的指针域的地址值即可。</p><h3 id="索引存储方法"><a href="#索引存储方法" class="headerlink" title="索引存储方法"></a>索引存储方法</h3><p>索引存储方法是在存储结点信息的同时，再建立一个附加的索引表，然后利用索引表中索引项的值来确定结点的实际存储单元地址。<br>索引表的中的每一项称为索引项，索引项的一般形式为（关键字，地址），关键字能唯一标识一个结点。</p><h3 id="散列存储方法"><a href="#散列存储方法" class="headerlink" title="散列存储方法"></a>散列存储方法</h3><p>散列村粗方法的基本思想是根据结点的关键字直接计算结点的存储地址。把结点的关键字作为自变量，通过一个称为散列函数H（key）的计算规则，确定除该结点的存储单元</p><h2 id="数据的运算"><a href="#数据的运算" class="headerlink" title="数据的运算"></a>数据的运算</h2><p>数据的运算是定义在数据的逻辑结构之上的，每一种逻辑结构都有一个运算的集合，如插入 删除 修改等。</p><h2 id="算法及其特性"><a href="#算法及其特性" class="headerlink" title="算法及其特性"></a>算法及其特性</h2><p>1.输入<br>2.输出<br>3.有穷性<br>4.确定性<br>5.可行性</p><h2 id="算法的描述方法"><a href="#算法的描述方法" class="headerlink" title="算法的描述方法"></a>算法的描述方法</h2><p>1.自然语言<br>2.流程图<br>3.程序设计语言<br>4.描述算法的形式化语言<br>5.伪代码</p><h2 id="算法性能分析"><a href="#算法性能分析" class="headerlink" title="算法性能分析"></a>算法性能分析</h2><p>1.统计方法<br>2.分析估算法</p><h1 id="为什么要学习数据结构"><a href="#为什么要学习数据结构" class="headerlink" title="为什么要学习数据结构"></a>为什么要学习数据结构</h1><p>1.数据结构+算法=程序</p><p>2.通常来说，学会程序设计基础，，可以解决程序设计中30%的问题，但学会数据结构，却能解决程序设计中80%的问题<br>∂<br>3.数据结构不仅是一般程序设计的基础，而且是实现编译程序 操作系统 数据库系统以及其他系统程序和大型应用程序的基础</p><h1 id="数据结构的分类"><a href="#数据结构的分类" class="headerlink" title="数据结构的分类"></a>数据结构的分类</h1><h2 id="线性结构-1"><a href="#线性结构-1" class="headerlink" title="线性结构"></a>线性结构</h2><p>数组；栈；队列；链表；哈希表等；</p><h2 id="树结构"><a href="#树结构" class="headerlink" title="树结构"></a>树结构</h2><p>二叉树；二叉搜索树；AVL；红黑树；Treap；Splay；堆；Trie；线段树；K-D树；并查集；哈夫曼树等；</p><h2 id="图结构"><a href="#图结构" class="headerlink" title="图结构"></a>图结构</h2><p>邻接矩阵；邻接表；</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;p&gt;本文是学习数据结构的学习笔记.主要介绍了下数据结构相关概念 为什需要学好数据结构以及数据结构的分类。&lt;/p&gt;
+&lt;h1 id=
+      
+    
+    </summary>
+    
+      <category term="Data Structrue" scheme="https://iteverydaybro.github.io/categories/Data-Structrue/"/>
+    
+    
+      <category term="Data Structure" scheme="https://iteverydaybro.github.io/tags/Data-Structure/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
