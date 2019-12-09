@@ -109,18 +109,32 @@
   };
 </script>
 
-  <meta name="description" content="本文说明狄克斯特拉算法加权图提高或降低某些边的权重 狄克斯特拉算法步骤1.找出“最便宜”的节点，即可在最短时间内到达的节点2.更新该节点的邻居的开销3.重复这个过程，知道对图中的每个节点都这样做了4.计算最短路径 权重狄克斯特拉算法用于每条边都有关联的数字的图，这些数字称为权重带权重的图称为加权图，不带权重的图称为非加权图说明：要计算非加权图中的最短路径，可使用广度优先算法。要计算加权图中的最短路">
-<meta name="keywords" content="Graphic Algorithm">
+  <meta name="description" content="文章说明本文主要介绍了在Mac的虚拟机Ubuntu上，安装ssh server，用ssh shell工具连接的过程。需要以下几个步骤    1.确定IP地址    2.确定安装openssh-server并开启    3.修改配置文件    4.重启服务    5.ssh shell 连接 确定IP地址1ifconfig   如果没安装net-tools，先安装net-tools 1apt ins">
+<meta name="keywords" content="Linux Ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="graphic-algorithm-seven">
-<meta property="og:url" content="https://iteverydaybro.github.io/2019/11/01/graphic-algorithm-seven/index.html">
+<meta property="og:title" content="Ubuntu 安装SSH Server">
+<meta property="og:url" content="https://iteverydaybro.github.io/2019/12/09/Linux-Two/index.html">
 <meta property="og:site_name" content="Tao one hacker">
-<meta property="og:description" content="本文说明狄克斯特拉算法加权图提高或降低某些边的权重 狄克斯特拉算法步骤1.找出“最便宜”的节点，即可在最短时间内到达的节点2.更新该节点的邻居的开销3.重复这个过程，知道对图中的每个节点都这样做了4.计算最短路径 权重狄克斯特拉算法用于每条边都有关联的数字的图，这些数字称为权重带权重的图称为加权图，不带权重的图称为非加权图说明：要计算非加权图中的最短路径，可使用广度优先算法。要计算加权图中的最短路">
+<meta property="og:description" content="文章说明本文主要介绍了在Mac的虚拟机Ubuntu上，安装ssh server，用ssh shell工具连接的过程。需要以下几个步骤    1.确定IP地址    2.确定安装openssh-server并开启    3.修改配置文件    4.重启服务    5.ssh shell 连接 确定IP地址1ifconfig   如果没安装net-tools，先安装net-tools 1apt ins">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-31T16:01:39.067Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qn909lj0j314m0b2wgz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnafxjufj314s0kgth2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnbb8l25j314i0ny11x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnezv0iqj314m02yta3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsx8cevtj317y05eq4w.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnmcxqchj30v60u0k8k.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnnhfigrj314g044wfr.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnt5vl4uj30v90u0aje.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsmd0ootj314m04oacf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsphttxxj317i0u049f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsq3b40mj31h60hoq6g.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsqkb6j0j317j0u04e1.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsr5lu72j31h204iq4j.jpg">
+<meta property="og:updated_time" content="2019-12-09T13:46:17.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="graphic-algorithm-seven">
-<meta name="twitter:description" content="本文说明狄克斯特拉算法加权图提高或降低某些边的权重 狄克斯特拉算法步骤1.找出“最便宜”的节点，即可在最短时间内到达的节点2.更新该节点的邻居的开销3.重复这个过程，知道对图中的每个节点都这样做了4.计算最短路径 权重狄克斯特拉算法用于每条边都有关联的数字的图，这些数字称为权重带权重的图称为加权图，不带权重的图称为非加权图说明：要计算非加权图中的最短路径，可使用广度优先算法。要计算加权图中的最短路">
+<meta name="twitter:title" content="Ubuntu 安装SSH Server">
+<meta name="twitter:description" content="文章说明本文主要介绍了在Mac的虚拟机Ubuntu上，安装ssh server，用ssh shell工具连接的过程。需要以下几个步骤    1.确定IP地址    2.确定安装openssh-server并开启    3.修改配置文件    4.重启服务    5.ssh shell 连接 确定IP地址1ifconfig   如果没安装net-tools，先安装net-tools 1apt ins">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qn909lj0j314m0b2wgz.jpg">
 
 
 
@@ -130,7 +144,7 @@
 
   
   
-  <link rel="canonical" href="https://iteverydaybro.github.io/2019/11/01/graphic-algorithm-seven/">
+  <link rel="canonical" href="https://iteverydaybro.github.io/2019/12/09/Linux-Two/">
 
 
 
@@ -141,7 +155,7 @@
 </script>
 
   
-  <title>graphic-algorithm-seven | Tao one hacker</title>
+  <title>Ubuntu 安装SSH Server | Tao one hacker</title>
   
 
 
@@ -339,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://iteverydaybro.github.io/2019/11/01/graphic-algorithm-seven/">
+    <link itemprop="mainEntityOfPage" href="https://iteverydaybro.github.io/2019/12/09/Linux-Two/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tao one hacker">
@@ -356,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">graphic-algorithm-seven
+          <h1 class="post-title" itemprop="name headline">Ubuntu 安装SSH Server
 
               
             
@@ -382,7 +396,7 @@
                 
               
 
-              <time title="Created: 2019-11-01 00:00:12 / Modified: 00:01:39" itemprop="dateCreated datePublished" datetime="2019-11-01T00:00:12+08:00">2019-11-01</time>
+              <time title="Created: 2019-12-09 18:20:23 / Modified: 21:46:17" itemprop="dateCreated datePublished" datetime="2019-12-09T18:20:23+08:00">2019-12-09</time>
             </span>
           
 
@@ -401,7 +415,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Graphic-Algorithm/" itemprop="url" rel="index"><span itemprop="name">Graphic Algorithm</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -441,11 +455,37 @@
       
 
       
-        <h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><h1 id="狄克斯特拉算法"><a href="#狄克斯特拉算法" class="headerlink" title="狄克斯特拉算法"></a>狄克斯特拉算法</h1><h2 id="加权图"><a href="#加权图" class="headerlink" title="加权图"></a>加权图</h2><p>提高或降低某些边的权重</p>
-<h2 id="狄克斯特拉算法步骤"><a href="#狄克斯特拉算法步骤" class="headerlink" title="狄克斯特拉算法步骤"></a>狄克斯特拉算法步骤</h2><p>1.找出“最便宜”的节点，即可在最短时间内到达的节点<br>2.更新该节点的邻居的开销<br>3.重复这个过程，知道对图中的每个节点都这样做了<br>4.计算最短路径</p>
-<h2 id="权重"><a href="#权重" class="headerlink" title="权重"></a>权重</h2><p>狄克斯特拉算法用于每条边都有关联的数字的图，这些数字称为权重<br>带权重的图称为加权图，不带权重的图称为非加权图<br>说明：要计算非加权图中的最短路径，可使用广度优先算法。要计算加权图中的最短路径，可使用狄克斯特拉算法。</p>
-<h2 id="环"><a href="#环" class="headerlink" title="环"></a>环</h2><p>从A点出发，走一圈又回到A点</p>
-<h2 id="狄克斯特拉算法只适用于有向无环图-狄克斯特拉算法"><a href="#狄克斯特拉算法只适用于有向无环图-狄克斯特拉算法" class="headerlink" title="狄克斯特拉算法只适用于有向无环图 狄克斯特拉算法"></a>狄克斯特拉算法只适用于有向无环图 狄克斯特拉算法</h2><h2 id="如果有负权重边，就不能使用狄克斯特拉算法。可以使用贝尔曼-福德算法"><a href="#如果有负权重边，就不能使用狄克斯特拉算法。可以使用贝尔曼-福德算法" class="headerlink" title="如果有负权重边，就不能使用狄克斯特拉算法。可以使用贝尔曼-福德算法"></a>如果有负权重边，就不能使用狄克斯特拉算法。可以使用贝尔曼-福德算法</h2>
+        <h2 id="文章说明"><a href="#文章说明" class="headerlink" title="文章说明"></a>文章说明</h2><p>本文主要介绍了在Mac的虚拟机Ubuntu上，安装ssh server，用ssh shell工具连接的过程。<br>需要以下几个步骤<br>    1.确定IP地址<br>    2.确定安装openssh-server并开启<br>    3.修改配置文件<br>    4.重启服务<br>    5.ssh shell 连接</p>
+<h2 id="确定IP地址"><a href="#确定IP地址" class="headerlink" title="确定IP地址"></a>确定IP地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qn909lj0j314m0b2wgz.jpg" alt></p>
+<p>如果没安装net-tools，先安装net-tools</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install net-tools</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnafxjufj314s0kgth2.jpg" alt><br>再次执行ifconfig命令<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnbb8l25j314i0ny11x.jpg" alt></p>
+<p>确定IP地址：192.168.1.152</p>
+<h2 id="确定安装ssh-service并开启"><a href="#确定安装ssh-service并开启" class="headerlink" title="确定安装ssh-service并开启"></a>确定安装ssh-service并开启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -e |grep ssh</span><br><span class="line">service ssh start</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnezv0iqj314m02yta3.jpg" alt><br>如果没有则安装openssh-server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install openssh-server</span><br></pre></td></tr></table></figure>
+
+<p>出现错误<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsx8cevtj317y05eq4w.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm /var/cache/apt/archives/lock </span><br><span class="line">rm /var/lib/dpkg/lock</span><br></pre></td></tr></table></figure>
+
+<p>重新执行apt-get install openssh-server命令<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnmcxqchj30v60u0k8k.jpg" alt></p>
+<p>再次执行ps -e |grep ssh<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnnhfigrj314g044wfr.jpg" alt><br>如果出现sshd，则证明启动成功</p>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>ssh-server配置文件位于/etc/ssh/sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>默认端口号：22，可以改成其他端口，比如234<br>修改PermitRootLogin yes<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qnt5vl4uj30v90u0aje.jpg" alt></p>
+<h2 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/ssh stop</span><br><span class="line">sudo /etc/init.d/ssh start</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsmd0ootj314m04oacf.jpg" alt></p>
+<h2 id="SSH-Shell连接"><a href="#SSH-Shell连接" class="headerlink" title="SSH Shell连接"></a>SSH Shell连接</h2><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsphttxxj317i0u049f.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsq3b40mj31h60hoq6g.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsqkb6j0j317j0u04e1.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qsr5lu72j31h204iq4j.jpg" alt></p>
+
       
     </div>
 
@@ -483,7 +523,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="https://iteverydaybro.github.io/2019/11/01/graphic-algorithm-seven/" title="graphic-algorithm-seven">https://iteverydaybro.github.io/2019/11/01/graphic-algorithm-seven/</a>
+    <a href="https://iteverydaybro.github.io/2019/12/09/Linux-Two/" title="Ubuntu 安装SSH Server">https://iteverydaybro.github.io/2019/12/09/Linux-Two/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
@@ -499,7 +539,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Graphic-Algorithm/" rel="tag"># Graphic Algorithm</a>
+            <a href="/tags/Linux-Ubuntu/" rel="tag"># Linux Ubuntu</a>
           
         </div>
       
@@ -512,8 +552,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/31/graphic-algorithm-six/" rel="next" title="graphic-algorithm-six">
-                <i class="fa fa-chevron-left"></i> graphic-algorithm-six
+              <a href="/2019/12/09/Linux-One/" rel="next" title="Ubuntu18.04 配置root账户登录">
+                <i class="fa fa-chevron-left"></i> Ubuntu18.04 配置root账户登录
               </a>
             
           </div>
@@ -521,10 +561,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/25/FileOperation-One/" rel="prev" title="FileOperation-One">
-                FileOperation-One <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -811,7 +847,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文说明"><span class="nav-number">1.</span> <span class="nav-text">本文说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#狄克斯特拉算法"><span class="nav-number">2.</span> <span class="nav-text">狄克斯特拉算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加权图"><span class="nav-number">2.1.</span> <span class="nav-text">加权图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狄克斯特拉算法步骤"><span class="nav-number">2.2.</span> <span class="nav-text">狄克斯特拉算法步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权重"><span class="nav-number">2.3.</span> <span class="nav-text">权重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环"><span class="nav-number">2.4.</span> <span class="nav-text">环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狄克斯特拉算法只适用于有向无环图-狄克斯特拉算法"><span class="nav-number">2.5.</span> <span class="nav-text">狄克斯特拉算法只适用于有向无环图 狄克斯特拉算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果有负权重边，就不能使用狄克斯特拉算法。可以使用贝尔曼-福德算法"><span class="nav-number">2.6.</span> <span class="nav-text">如果有负权重边，就不能使用狄克斯特拉算法。可以使用贝尔曼-福德算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章说明"><span class="nav-number">1.</span> <span class="nav-text">文章说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定IP地址"><span class="nav-number">2.</span> <span class="nav-text">确定IP地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确定安装ssh-service并开启"><span class="nav-number">3.</span> <span class="nav-text">确定安装ssh-service并开启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置文件"><span class="nav-number">4.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启服务"><span class="nav-number">5.</span> <span class="nav-text">重启服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-Shell连接"><span class="nav-number">6.</span> <span class="nav-text">SSH Shell连接</span></a></li></ol></div>
             
 
           </div>
