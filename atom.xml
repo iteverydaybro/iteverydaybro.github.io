@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iteverydaybro.github.io/"/>
-  <updated>2019-12-09T13:46:17.557Z</updated>
+  <updated>2019-12-10T02:41:37.047Z</updated>
   <id>https://iteverydaybro.github.io/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux-Four</title>
+    <link href="https://iteverydaybro.github.io/2019/12/10/Linux-Four/"/>
+    <id>https://iteverydaybro.github.io/2019/12/10/Linux-Four/</id>
+    <published>2019-12-10T02:41:37.000Z</published>
+    <updated>2019-12-10T02:41:37.047Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 安装 Docker</title>
+    <link href="https://iteverydaybro.github.io/2019/12/09/Linux-Three/"/>
+    <id>https://iteverydaybro.github.io/2019/12/09/Linux-Three/</id>
+    <published>2019-12-09T13:50:03.000Z</published>
+    <updated>2019-12-10T02:37:17.096Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="文章说明"><a href="#文章说明" class="headerlink" title="文章说明"></a>文章说明</h2><p>本文主要介绍了在Mac的Ubuntu虚拟机上，安装Docker的整个流程。</p><p>本文需要以下几个步骤</p><ul><li>卸载旧版本</li><li>设置仓库</li><li>安装Docker</li><li>测试</li></ul><h2 id="安装需要的包"><a href="#安装需要的包" class="headerlink" title="安装需要的包"></a>安装需要的包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qtomz3puj314q0byq7u.jpg" alt></p><h2 id="设置仓库"><a href="#设置仓库" class="headerlink" title="设置仓库"></a>设置仓库</h2><p>更新apt包索引</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf5o23vzj312n0u0wtz.jpg" alt></p><p>安装apt依赖包，用于通过HTTPS来获取仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg-agent \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf6k6ge0j30zk0u0gzz.jpg" alt></p><p>添加 Docker 的官方 GPG 密钥</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf74wdyoj314u03075b.jpg" alt></p><p>通过搜索指纹的后8个字符，验证您现在是否拥有带有指纹的密钥</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key fingerprint 0EBFCD88</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf7ka1z8j314q05640n.jpg" alt></p><p>使用以下指令设置稳定版仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository \</span><br><span class="line">   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span><br><span class="line">  $(lsb_release -cs) \</span><br><span class="line">  stable&quot;</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf88cmtzj30z20u0toj.jpg" alt></p><h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p>更新 apt 包索引</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure><p>安装最新版本的 Docker Engine-Community 和 containerd</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf8yyf7lj314q0rkdrc.jpg" alt></p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf9k9r8zj30zb0u0tk5.jpg" alt></p><h2 id="关闭Docker服务"><a href="#关闭Docker服务" class="headerlink" title="关闭Docker服务"></a>关闭Docker服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker stop</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfaj1qasj314s02sjsb.jpg" alt></p><h2 id="启动Docker服务"><a href="#启动Docker服务" class="headerlink" title="启动Docker服务"></a>启动Docker服务</h2><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfb747s5j314u070acw.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;文章说明&quot;&gt;&lt;a href=&quot;#文章说明&quot; class=&quot;headerlink&quot; title=&quot;文章说明&quot;&gt;&lt;/a&gt;文章说明&lt;/h2&gt;&lt;p&gt;本文主要介绍了在Mac的Ubuntu虚拟机上，安装Docker的整个流程。&lt;/p&gt;
+&lt;p&gt;本文需要以下几个步骤&lt;/p&gt;
+&lt;u
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://iteverydaybro.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux Ubuntu" scheme="https://iteverydaybro.github.io/tags/Linux-Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu 安装SSH Server</title>
@@ -455,57 +496,6 @@
     
     
       <category term="DotNet Core" scheme="https://iteverydaybro.github.io/tags/DotNet-Core/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker one</title>
-    <link href="https://iteverydaybro.github.io/2019/10/31/docker-one/"/>
-    <id>https://iteverydaybro.github.io/2019/10/31/docker-one/</id>
-    <published>2019-10-31T14:49:45.000Z</published>
-    <updated>2019-10-31T14:53:56.601Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><h1 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h1><h2 id="什么是容器"><a href="#什么是容器" class="headerlink" title="什么是容器"></a>什么是容器</h2><p>一种虚拟化的方案<br>操作系统级别的虚拟化<br>只能运行相同或者形似内核的操作系统<br>依赖于Linux内核特性：Namespace和Cgroups</p><h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h2><p>将应用程序自动部署到容器<br>Go语言开源引擎 GitHub地址：<a href="https://github.com/docker/docker" target="_blank" rel="noopener">https://github.com/docker/docker</a><br>2013年初 dotCloud<br>基于Apache 2.0 开源授权协议发行</p><h2 id="Docker目标"><a href="#Docker目标" class="headerlink" title="Docker目标"></a>Docker目标</h2><p>提供简单轻量的建模方式<br>职责的逻辑分离<br>快速高效的开发生命周期<br>鼓励使用面向服务的架构</p><h2 id="Docker使用场景"><a href="#Docker使用场景" class="headerlink" title="Docker使用场景"></a>Docker使用场景</h2><p>使用Docker容器开发 测试 部署服务<br>创建隔离的运行环境<br>搭建测试环境<br>构建多用化的平台即服务（Paas）基础设施<br>高性能 超大规模的宿主机部署</p><h2 id="Docker基本组成"><a href="#Docker基本组成" class="headerlink" title="Docker基本组成"></a>Docker基本组成</h2><h3 id="1-Docker-Client-客户端-守护进程"><a href="#1-Docker-Client-客户端-守护进程" class="headerlink" title="1.Docker Client 客户端/守护进程"></a>1.Docker Client 客户端/守护进程</h3><p>C/S架构<br>本地/远程</p><h3 id="Docker-Image-镜像"><a href="#Docker-Image-镜像" class="headerlink" title="Docker Image 镜像"></a>Docker Image 镜像</h3><p>容器的基石<br>层叠的只读文件系统<br>联合加载（union mount）</p><h3 id="Docker-Container-容器"><a href="#Docker-Container-容器" class="headerlink" title="Docker Container 容器"></a>Docker Container 容器</h3><p>通过镜像启动<br>启动和执行阶段<br>写时复制（copy to write）</p><h3 id="Docker-Registry-仓库"><a href="#Docker-Registry-仓库" class="headerlink" title="Docker Registry 仓库"></a>Docker Registry 仓库</h3><p>公有<br>私有<br>Docker Hub<br>Docker 在线演示地址：<a href="https://www.docker.com/tryit" target="_blank" rel="noopener">https://www.docker.com/tryit</a><br><a href="https://docs.docker.com/" target="_blank" rel="noopener">https://docs.docker.com/</a></p><h2 id="Docke容器相关技术简介"><a href="#Docke容器相关技术简介" class="headerlink" title="Docke容器相关技术简介"></a>Docke容器相关技术简介</h2><h3 id="Docker依赖的Linux内核特性"><a href="#Docker依赖的Linux内核特性" class="headerlink" title="Docker依赖的Linux内核特性"></a>Docker依赖的Linux内核特性</h3><h4 id="Namespace命名空间"><a href="#Namespace命名空间" class="headerlink" title="Namespace命名空间"></a>Namespace命名空间</h4><p>编程语言==》封装==〉代码隔离<br>操作系统==》系统资源的隔离==〉进程 网络 文件系统<br>1.PID（Process ID）进程隔离<br>2.NET（Network）管理网络接口<br>3.IPC（InterProcess Communication）管理夸进程通信的访问<br>4.MNT（Mount）管理挂载点<br>5.UTS（Unix Timesharing System）隔离内核和版本标识</p><h4 id="Control-groups（cgroups）控制组"><a href="#Control-groups（cgroups）控制组" class="headerlink" title="Control groups（cgroups）控制组"></a>Control groups（cgroups）控制组</h4><p>用来分配资源<br>来源于Google<br>Linux kernel 2.6.24 @2007<br>1.资源限制<br>2.优先级设定<br>3.资源计量<br>4.资源控制</p><h4 id="Docker-容器的能力"><a href="#Docker-容器的能力" class="headerlink" title="Docker 容器的能力"></a>Docker 容器的能力</h4><p>1.文件系统隔离：每个容器都有自己的root文件系统<br>2.进程隔离：每个容器都运行在自己的进程环境中<br>3.网络隔离：容器间的虚拟网络接口和IP地址都是分开的<br>4.资源隔离和分组：使用cgroups将CPU和内存之类的资源独立分配给每个Docker容器</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;h1 id=&quot;Docker简介&quot;&gt;&lt;a href=&quot;#Docker简介&quot; class=&quot;headerlink&quot; title=&quot;D
-      
-    
-    </summary>
-    
-      <category term="Docker" scheme="https://iteverydaybro.github.io/categories/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://iteverydaybro.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>company-one</title>
-    <link href="https://iteverydaybro.github.io/2019/10/31/company-one/"/>
-    <id>https://iteverydaybro.github.io/2019/10/31/company-one/</id>
-    <published>2019-10-31T14:43:43.000Z</published>
-    <updated>2019-11-01T00:39:46.960Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>推荐给大家一些程序员接单平台</p><h1 id="程序员客栈"><a href="#程序员客栈" class="headerlink" title="程序员客栈"></a>程序员客栈</h1><p><a href="https://www.proginn.com" target="_blank" rel="noopener">https://www.proginn.com</a></p><h1 id="码市"><a href="#码市" class="headerlink" title="码市"></a>码市</h1><p><a href="https://codemart.com" target="_blank" rel="noopener">https://codemart.com</a></p><h1 id="开源众包"><a href="#开源众包" class="headerlink" title="开源众包"></a>开源众包</h1><p><a href="https://zb.oschina.net" target="_blank" rel="noopener">https://zb.oschina.net</a></p><h1 id="快码"><a href="#快码" class="headerlink" title="快码"></a>快码</h1><p><a href="https://www.kuai.ma/" target="_blank" rel="noopener">https://www.kuai.ma/</a></p><h1 id="码易"><a href="#码易" class="headerlink" title="码易"></a>码易</h1><p><a href="https://www.mayigeek.com/" target="_blank" rel="noopener">https://www.mayigeek.com/</a></p><h1 id="一早一晚"><a href="#一早一晚" class="headerlink" title="一早一晚"></a>一早一晚</h1><p><a href="https://3cwork.com" target="_blank" rel="noopener">https://3cwork.com</a></p><h1 id="stack-overflow"><a href="#stack-overflow" class="headerlink" title="stack overflow"></a>stack overflow</h1><p><a href="https://stackoverflow.com/" target="_blank" rel="noopener">https://stackoverflow.com/</a></p><h1 id="Dribbble"><a href="#Dribbble" class="headerlink" title="Dribbble:"></a>Dribbble:</h1><p><a href="https://dribbble.com" target="_blank" rel="noopener">https://dribbble.com</a></p><h1 id="Up-works"><a href="#Up-works" class="headerlink" title="Up works"></a>Up works</h1><p><a href="https://www.upwork.com/" target="_blank" rel="noopener">https://www.upwork.com/</a></p><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p><a href="https://shixian.com" target="_blank" rel="noopener">https://shixian.com</a></p><h1 id="猿急送"><a href="#猿急送" class="headerlink" title="猿急送"></a>猿急送</h1><p><a href="https://www.yuanjisong.com" target="_blank" rel="noopener">https://www.yuanjisong.com</a></p><h1 id="xsoft"><a href="#xsoft" class="headerlink" title="xsoft"></a>xsoft</h1><p><a href="https://www.sxsoft.com/" target="_blank" rel="noopener">https://www.sxsoft.com/</a></p><h1 id="人人开发"><a href="#人人开发" class="headerlink" title="人人开发"></a>人人开发</h1><p><a href="http://rrkf.com" target="_blank" rel="noopener">http://rrkf.com</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;p&gt;推荐给大家一些程序员接单平台&lt;/p&gt;
-&lt;h1 id=&quot;程序员客栈&quot;&gt;&lt;a href=&quot;#程序员客栈&quot; class=&quot;head
-      
-    
-    </summary>
-    
-      <category term="Company" scheme="https://iteverydaybro.github.io/categories/Company/"/>
-    
-    
-      <category term="Company" scheme="https://iteverydaybro.github.io/tags/Company/"/>
     
   </entry>
   

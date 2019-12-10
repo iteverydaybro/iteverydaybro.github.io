@@ -109,28 +109,29 @@
   };
 </script>
 
-  <meta name="description" content="本文说明今天去部署IIS的时候发现其中一个端口被占用了，但是不知道是是什么程序/服务占用了端口，所以需要查找下是哪个程序/服务占用了端口，然后kill掉程序，特此记录一下。 部署到IIS的Web站点启动不起来，很有可能其端口号被占用了 我们需要利用netstat -ano命令去查找端口占用情况 利用taskkill /F /PID 去杀掉进程 netstat 命令介绍Netstat 命令用于显示各">
-<meta name="keywords" content="CMD Batch">
+  <meta name="description" content="文章说明本文主要介绍了在Mac的Ubuntu虚拟机上，安装Docker的整个流程。 本文需要以下几个步骤  卸载旧版本 设置仓库 安装Docker 测试  安装需要的包1sudo apt-get remove docker docker-engine docker.io containerd runc   设置仓库更新apt包索引 1sudo apt-get update   安装apt依赖包，用">
+<meta name="keywords" content="Linux Ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cmd batch two">
-<meta property="og:url" content="https://iteverydaybro.github.io/2019/10/31/cmd-bat-two/index.html">
+<meta property="og:title" content="Ubuntu 安装 Docker">
+<meta property="og:url" content="https://iteverydaybro.github.io/2019/12/09/Linux-Three/index.html">
 <meta property="og:site_name" content="Tao one hacker">
-<meta property="og:description" content="本文说明今天去部署IIS的时候发现其中一个端口被占用了，但是不知道是是什么程序/服务占用了端口，所以需要查找下是哪个程序/服务占用了端口，然后kill掉程序，特此记录一下。 部署到IIS的Web站点启动不起来，很有可能其端口号被占用了 我们需要利用netstat -ano命令去查找端口占用情况 利用taskkill /F /PID 去杀掉进程 netstat 命令介绍Netstat 命令用于显示各">
+<meta property="og:description" content="文章说明本文主要介绍了在Mac的Ubuntu虚拟机上，安装Docker的整个流程。 本文需要以下几个步骤  卸载旧版本 设置仓库 安装Docker 测试  安装需要的包1sudo apt-get remove docker docker-engine docker.io containerd runc   设置仓库更新apt包索引 1sudo apt-get update   安装apt依赖包，用">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hqnv36jwj31io0tqwo6.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hqrsbq2uj31hc098gnt.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hqw1wrupj30p203w0tg.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrd2m6h7j310q0pijy3.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrdq3ondj31go0iqn5y.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hretm7ubj31ho0m0gzi.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrg4hvv1j30zi0kk46i.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrgifjomj30qc0ak3zu.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrgyzstrj310k0mogpq.jpg">
-<meta property="og:updated_time" content="2019-10-31T14:41:02.392Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qtomz3puj314q0byq7u.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf5o23vzj312n0u0wtz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf6k6ge0j30zk0u0gzz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf74wdyoj314u03075b.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf7ka1z8j314q05640n.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf88cmtzj30z20u0toj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf8yyf7lj314q0rkdrc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf9k9r8zj30zb0u0tk5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfaj1qasj314s02sjsb.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfb747s5j314u070acw.jpg">
+<meta property="og:updated_time" content="2019-12-10T02:37:17.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cmd batch two">
-<meta name="twitter:description" content="本文说明今天去部署IIS的时候发现其中一个端口被占用了，但是不知道是是什么程序/服务占用了端口，所以需要查找下是哪个程序/服务占用了端口，然后kill掉程序，特此记录一下。 部署到IIS的Web站点启动不起来，很有可能其端口号被占用了 我们需要利用netstat -ano命令去查找端口占用情况 利用taskkill /F /PID 去杀掉进程 netstat 命令介绍Netstat 命令用于显示各">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hqnv36jwj31io0tqwo6.jpg">
+<meta name="twitter:title" content="Ubuntu 安装 Docker">
+<meta name="twitter:description" content="文章说明本文主要介绍了在Mac的Ubuntu虚拟机上，安装Docker的整个流程。 本文需要以下几个步骤  卸载旧版本 设置仓库 安装Docker 测试  安装需要的包1sudo apt-get remove docker docker-engine docker.io containerd runc   设置仓库更新apt包索引 1sudo apt-get update   安装apt依赖包，用">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006tNbRwly1g9qtomz3puj314q0byq7u.jpg">
 
 
 
@@ -140,7 +141,7 @@
 
   
   
-  <link rel="canonical" href="https://iteverydaybro.github.io/2019/10/31/cmd-bat-two/">
+  <link rel="canonical" href="https://iteverydaybro.github.io/2019/12/09/Linux-Three/">
 
 
 
@@ -151,7 +152,7 @@
 </script>
 
   
-  <title>cmd batch two | Tao one hacker</title>
+  <title>Ubuntu 安装 Docker | Tao one hacker</title>
   
 
 
@@ -349,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://iteverydaybro.github.io/2019/10/31/cmd-bat-two/">
+    <link itemprop="mainEntityOfPage" href="https://iteverydaybro.github.io/2019/12/09/Linux-Three/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tao one hacker">
@@ -366,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cmd batch two
+          <h1 class="post-title" itemprop="name headline">Ubuntu 安装 Docker
 
               
             
@@ -392,13 +393,23 @@
                 
               
 
-              <time title="Created: 2019-10-31 22:05:36 / Modified: 22:41:02" itemprop="dateCreated datePublished" datetime="2019-10-31T22:05:36+08:00">2019-10-31</time>
+              <time title="Created: 2019-12-09 21:50:03" itemprop="dateCreated datePublished" datetime="2019-12-09T21:50:03+08:00">2019-12-09</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-12-10 10:37:17" itemprop="dateModified" datetime="2019-12-10T10:37:17+08:00">2019-12-10</time>
+              </span>
             
           
 
@@ -411,7 +422,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CMD-Batch/" itemprop="url" rel="index"><span itemprop="name">CMD Batch</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -451,26 +462,51 @@
       
 
       
-        <h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>今天去部署IIS的时候发现其中一个端口被占用了，但是不知道是是什么程序/服务占用了端口，所以需要查找下是哪个程序/服务占用了端口，然后kill掉程序，特此记录一下。</p>
-<h2 id="部署到IIS的Web站点启动不起来，很有可能其端口号被占用了"><a href="#部署到IIS的Web站点启动不起来，很有可能其端口号被占用了" class="headerlink" title="部署到IIS的Web站点启动不起来，很有可能其端口号被占用了"></a>部署到IIS的Web站点启动不起来，很有可能其端口号被占用了</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hqnv36jwj31io0tqwo6.jpg" alt></p>
-<h2 id="我们需要利用netstat-ano命令去查找端口占用情况"><a href="#我们需要利用netstat-ano命令去查找端口占用情况" class="headerlink" title="我们需要利用netstat -ano命令去查找端口占用情况"></a>我们需要利用netstat -ano命令去查找端口占用情况</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hqrsbq2uj31hc098gnt.jpg" alt></p>
-<h2 id="利用taskkill-F-PID-去杀掉进程"><a href="#利用taskkill-F-PID-去杀掉进程" class="headerlink" title="利用taskkill /F /PID 去杀掉进程"></a>利用taskkill /F /PID 去杀掉进程</h2><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hqw1wrupj30p203w0tg.jpg" alt></p>
-<h1 id="netstat-命令介绍"><a href="#netstat-命令介绍" class="headerlink" title="netstat 命令介绍"></a>netstat 命令介绍</h1><p>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接等</p>
-<h2 id="常见参数"><a href="#常见参数" class="headerlink" title="常见参数"></a>常见参数</h2><p>-a 显示所有选项，默认不显示LISTEN相关信息<br>-t 仅显示tcp相关信息<br>-n 拒绝显示别名，能显示数字的全部转换为数字<br>-p 显示建立相关链接的程序名<br>-r 显示路由信息，路由表<br>-e 显示扩展信息，例如uid等<br>-s 按各个协议进行统计</p>
-<h3 id="netstat-a"><a href="#netstat-a" class="headerlink" title="netstat -a"></a>netstat -a</h3><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrd2m6h7j310q0pijy3.jpg" alt></p>
-<h3 id="netstat-t"><a href="#netstat-t" class="headerlink" title="netstat -t"></a>netstat -t</h3><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrdq3ondj31go0iqn5y.jpg" alt></p>
-<h3 id="netstat-n"><a href="#netstat-n" class="headerlink" title="netstat -n"></a>netstat -n</h3><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hretm7ubj31ho0m0gzi.jpg" alt></p>
-<h3 id="netstat-r"><a href="#netstat-r" class="headerlink" title="netstat -r"></a>netstat -r</h3><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrg4hvv1j30zi0kk46i.jpg" alt></p>
-<h3 id="netstat-e"><a href="#netstat-e" class="headerlink" title="netstat -e"></a>netstat -e</h3><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrgifjomj30qc0ak3zu.jpg" alt></p>
-<h3 id="netstat-s"><a href="#netstat-s" class="headerlink" title="netstat -s"></a>netstat -s</h3><p><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g8hrgyzstrj310k0mogpq.jpg" alt></p>
-<h1 id="taskkill-命令介绍"><a href="#taskkill-命令介绍" class="headerlink" title="taskkill 命令介绍"></a>taskkill 命令介绍</h1><h2 id="常见参数-1"><a href="#常见参数-1" class="headerlink" title="常见参数"></a>常见参数</h2><h3 id="IM-根据进程名称终止进程"><a href="#IM-根据进程名称终止进程" class="headerlink" title="/IM 根据进程名称终止进程"></a>/IM 根据进程名称终止进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /IM executablename</span><br></pre></td></tr></table></figure>
+        <h2 id="文章说明"><a href="#文章说明" class="headerlink" title="文章说明"></a>文章说明</h2><p>本文主要介绍了在Mac的Ubuntu虚拟机上，安装Docker的整个流程。</p>
+<p>本文需要以下几个步骤</p>
+<ul>
+<li>卸载旧版本</li>
+<li>设置仓库</li>
+<li>安装Docker</li>
+<li>测试</li>
+</ul>
+<h2 id="安装需要的包"><a href="#安装需要的包" class="headerlink" title="安装需要的包"></a>安装需要的包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure>
 
-<h3 id="F-强制终止进程"><a href="#F-强制终止进程" class="headerlink" title="/F 强制终止进程"></a>/F 强制终止进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /IM iexplore.exe</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9qtomz3puj314q0byq7u.jpg" alt></p>
+<h2 id="设置仓库"><a href="#设置仓库" class="headerlink" title="设置仓库"></a>设置仓库</h2><p>更新apt包索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 
-<h3 id="PID-根据进程ID终止进程"><a href="#PID-根据进程ID终止进程" class="headerlink" title="/PID 根据进程ID终止进程"></a>/PID 根据进程ID终止进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">taskkill /PID  processId</span><br><span class="line">taskkill /PID 1234</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf5o23vzj312n0u0wtz.jpg" alt></p>
+<p>安装apt依赖包，用于通过HTTPS来获取仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg-agent \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure>
 
-<h3 id="FI-终止消耗大量内存的进程"><a href="#FI-终止消耗大量内存的进程" class="headerlink" title="/FI 终止消耗大量内存的进程"></a>/FI 终止消耗大量内存的进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">taskkill /FI &quot;memusage gt value&quot;</span><br><span class="line">taskkill /FI &quot;memusage gt 102400&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf6k6ge0j30zk0u0gzz.jpg" alt></p>
+<p>添加 Docker 的官方 GPG 密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf74wdyoj314u03075b.jpg" alt></p>
+<p>通过搜索指纹的后8个字符，验证您现在是否拥有带有指纹的密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key fingerprint 0EBFCD88</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf7ka1z8j314q05640n.jpg" alt></p>
+<p>使用以下指令设置稳定版仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository \</span><br><span class="line">   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span><br><span class="line">  $(lsb_release -cs) \</span><br><span class="line">  stable&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf88cmtzj30z20u0toj.jpg" alt></p>
+<h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p>更新 apt 包索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>安装最新版本的 Docker Engine-Community 和 containerd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf8yyf7lj314q0rkdrc.jpg" alt></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rf9k9r8zj30zb0u0tk5.jpg" alt></p>
+<h2 id="关闭Docker服务"><a href="#关闭Docker服务" class="headerlink" title="关闭Docker服务"></a>关闭Docker服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker stop</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfaj1qasj314s02sjsb.jpg" alt></p>
+<h2 id="启动Docker服务"><a href="#启动Docker服务" class="headerlink" title="启动Docker服务"></a>启动Docker服务</h2><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfb747s5j314u070acw.jpg" alt></p>
 
       
     </div>
@@ -509,7 +545,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="https://iteverydaybro.github.io/2019/10/31/cmd-bat-two/" title="cmd batch two">https://iteverydaybro.github.io/2019/10/31/cmd-bat-two/</a>
+    <a href="https://iteverydaybro.github.io/2019/12/09/Linux-Three/" title="Ubuntu 安装 Docker">https://iteverydaybro.github.io/2019/12/09/Linux-Three/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
@@ -525,7 +561,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/CMD-Batch/" rel="tag"># CMD Batch</a>
+            <a href="/tags/Linux-Ubuntu/" rel="tag"># Linux Ubuntu</a>
           
         </div>
       
@@ -538,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/31/cmd-bat-one/" rel="next" title="cmd batch one">
-                <i class="fa fa-chevron-left"></i> cmd batch one
+              <a href="/2019/12/09/Linux-Two/" rel="next" title="Ubuntu 安装SSH Server">
+                <i class="fa fa-chevron-left"></i> Ubuntu 安装SSH Server
               </a>
             
           </div>
@@ -548,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/31/company-one/" rel="prev" title="company-one">
-                company-one <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/10/Linux-Four/" rel="prev" title="Linux-Four">
+                Linux-Four <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -837,7 +873,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文说明"><span class="nav-number">1.</span> <span class="nav-text">本文说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到IIS的Web站点启动不起来，很有可能其端口号被占用了"><span class="nav-number">1.1.</span> <span class="nav-text">部署到IIS的Web站点启动不起来，很有可能其端口号被占用了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们需要利用netstat-ano命令去查找端口占用情况"><span class="nav-number">1.2.</span> <span class="nav-text">我们需要利用netstat -ano命令去查找端口占用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用taskkill-F-PID-去杀掉进程"><span class="nav-number">1.3.</span> <span class="nav-text">利用taskkill /F /PID 去杀掉进程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#netstat-命令介绍"><span class="nav-number">2.</span> <span class="nav-text">netstat 命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见参数"><span class="nav-number">2.1.</span> <span class="nav-text">常见参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-a"><span class="nav-number">2.1.1.</span> <span class="nav-text">netstat -a</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-t"><span class="nav-number">2.1.2.</span> <span class="nav-text">netstat -t</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-n"><span class="nav-number">2.1.3.</span> <span class="nav-text">netstat -n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-r"><span class="nav-number">2.1.4.</span> <span class="nav-text">netstat -r</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-e"><span class="nav-number">2.1.5.</span> <span class="nav-text">netstat -e</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat-s"><span class="nav-number">2.1.6.</span> <span class="nav-text">netstat -s</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#taskkill-命令介绍"><span class="nav-number">3.</span> <span class="nav-text">taskkill 命令介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见参数-1"><span class="nav-number">3.1.</span> <span class="nav-text">常见参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IM-根据进程名称终止进程"><span class="nav-number">3.1.1.</span> <span class="nav-text">/IM 根据进程名称终止进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F-强制终止进程"><span class="nav-number">3.1.2.</span> <span class="nav-text">/F 强制终止进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PID-根据进程ID终止进程"><span class="nav-number">3.1.3.</span> <span class="nav-text">/PID 根据进程ID终止进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FI-终止消耗大量内存的进程"><span class="nav-number">3.1.4.</span> <span class="nav-text">/FI 终止消耗大量内存的进程</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章说明"><span class="nav-number">1.</span> <span class="nav-text">文章说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装需要的包"><span class="nav-number">2.</span> <span class="nav-text">安装需要的包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置仓库"><span class="nav-number">3.</span> <span class="nav-text">设置仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Docker"><span class="nav-number">4.</span> <span class="nav-text">安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭Docker服务"><span class="nav-number">6.</span> <span class="nav-text">关闭Docker服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动Docker服务"><span class="nav-number">7.</span> <span class="nav-text">启动Docker服务</span></a></li></ol></div>
             
 
           </div>
