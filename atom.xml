@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iteverydaybro.github.io/"/>
-  <updated>2019-12-10T02:41:37.047Z</updated>
+  <updated>2019-12-10T02:54:50.535Z</updated>
   <id>https://iteverydaybro.github.io/</id>
   
   <author>
@@ -17,16 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Linux-Four</title>
+    <title>CentOS 7 设置开启默认使用Root账号登录</title>
     <link href="https://iteverydaybro.github.io/2019/12/10/Linux-Four/"/>
     <id>https://iteverydaybro.github.io/2019/12/10/Linux-Four/</id>
     <published>2019-12-10T02:41:37.000Z</published>
-    <updated>2019-12-10T02:41:37.047Z</updated>
+    <updated>2019-12-10T02:54:50.535Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="文章说明"><a href="#文章说明" class="headerlink" title="文章说明"></a>文章说明</h2><p>本文主要介绍了Mac虚拟机CentOS7，启用root账号登录的全过程。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfmu13naj30sm0h4whd.jpg" alt><br>本文包括以下几个步骤</p><ul><li>设置root账号密码</li><li>切换root账号</li><li>修改/ect/gdm/custom.conf文件</li><li>测试</li></ul><h2 id="设置root账号密码"><a href="#设置root账号密码" class="headerlink" title="设置root账号密码"></a>设置root账号密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfnz5zuej314u0bkdi1.jpg" alt></p><h2 id="切换root账号"><a href="#切换root账号" class="headerlink" title="切换root账号"></a>切换root账号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - root</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfp5f5b4j314g03w750.jpg" alt></p><h2 id="修改-ect-gdm-custom-conf文件"><a href="#修改-ect-gdm-custom-conf文件" class="headerlink" title="修改/ect/gdm/custom.conf文件"></a>修改/ect/gdm/custom.conf文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/gdm/custom.conf</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfqi9on1j314i0ig76k.jpg" alt></p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1g9rfut5eamj314m05cjs4.jpg" alt></p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h2 id=&quot;文章说明&quot;&gt;&lt;a href=&quot;#文章说明&quot; class=&quot;headerlink&quot; title=&quot;文章说明&quot;&gt;&lt;/a&gt;文章说明&lt;/h2&gt;&lt;p&gt;本文主要介绍了Mac虚拟机CentOS7，启用root账号登录的全过程。&lt;br&gt;&lt;img src=&quot;https://tva1
+      
+    
     </summary>
     
+      <category term="Linux" scheme="https://iteverydaybro.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux CentOS" scheme="https://iteverydaybro.github.io/tags/Linux-CentOS/"/>
     
   </entry>
   
