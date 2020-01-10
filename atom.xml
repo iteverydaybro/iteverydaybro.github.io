@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iteverydaybro.github.io/"/>
-  <updated>2019-12-10T03:17:50.787Z</updated>
+  <updated>2020-01-10T23:19:09.446Z</updated>
   <id>https://iteverydaybro.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux Ubuntu Docker Redis 配置文件启动以及数据持久化</title>
+    <link href="https://iteverydaybro.github.io/2020/01/10/redis-four/"/>
+    <id>https://iteverydaybro.github.io/2020/01/10/redis-four/</id>
+    <published>2020-01-09T23:06:53.000Z</published>
+    <updated>2020-01-10T23:19:09.446Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>本文主要说明在Linux Ubuntu系统中，利用Docker容器以配置文件的方式启动并持久化数据。</p><h1 id="拉取镜像到本地"><a href="#拉取镜像到本地" class="headerlink" title="拉取镜像到本地"></a>拉取镜像到本地</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gar3tx4n37j30mv06djx5.jpg" alt></p><h1 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /root/docker/redis/conf</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gar3xb0mmhj30ms01mmzt.jpg" alt></p><h1 id="拷贝配置文件到conf"><a href="#拷贝配置文件到conf" class="headerlink" title="拷贝配置文件到conf"></a>拷贝配置文件到conf</h1><p>如果没有就去官网下载一下拷贝到/root/docker/redis/conf中</p><h1 id="启动容器：加载自定义配置并持久化数据"><a href="#启动容器：加载自定义配置并持久化数据" class="headerlink" title="启动容器：加载自定义配置并持久化数据"></a>启动容器：加载自定义配置并持久化数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --privileged=true -p 6379:6379 -v /root/docker/redis/conf/redis.conf:/etc/redis/redis.conf -v /root/docker/redis/data:/data --name redis redis redis-server /etc/redis/redis.conf --appendonly yes</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gas9269bhgj312j03hqao.jpg" alt></p><h1 id="涉及的命令解析"><a href="#涉及的命令解析" class="headerlink" title="涉及的命令解析"></a>涉及的命令解析</h1><ul><li>-d 以守护进程的方式启动容器</li><li>-p 映射宿主机端口</li><li>–name redis 指定容器名称</li><li>–restart always 开机启动</li><li>–privileged=true 提升容器内权限</li><li>-v /root/docker/redis/conf/redis:/etc/redis/redis.conf 映射配置文件</li><li>-v /root/docker/redis/data:/data 映射数据目录</li><li>–appendonly yes 开启数据持久化</li></ul><h1 id="redis容器成功启动但是外部访问不了"><a href="#redis容器成功启动但是外部访问不了" class="headerlink" title="redis容器成功启动但是外部访问不了"></a>redis容器成功启动但是外部访问不了</h1><p>修改配置文件<br>Bind 127.0.0.1 修改为  Bind 0.0.0.0</p><h1 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart redis</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;p&gt;本文主要说明在Linux Ubuntu系统中，利用Docker容器以配置文件的方式启动并持久化数据。&lt;/p&gt;
+&lt;h1 id=
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://iteverydaybro.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux Redis" scheme="https://iteverydaybro.github.io/tags/Linux-Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux-Six</title>
+    <link href="https://iteverydaybro.github.io/2019/12/11/Linux-Six/"/>
+    <id>https://iteverydaybro.github.io/2019/12/11/Linux-Six/</id>
+    <published>2019-12-11T01:51:06.000Z</published>
+    <updated>2019-12-11T03:21:46.966Z</updated>
+    
+    <content type="html"><![CDATA[<p>##文章说明<br>本文主要介绍了Mac虚拟机上CentOS7，开发NetCore项目Docker化，部署Docker化。</p><ul><li>安装nginx</li><li>测试nginx</li><li>写Dockerfile</li><li>创建镜像</li><li>运行镜像</li><li>配置nginx</li><li>测试</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##文章说明&lt;br&gt;本文主要介绍了Mac虚拟机上CentOS7，开发NetCore项目Docker化，部署Docker化。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装nginx&lt;/li&gt;
+&lt;li&gt;测试nginx&lt;/li&gt;
+&lt;li&gt;写Dockerfile&lt;/li&gt;
+&lt;li&gt;创建镜像&lt;/l
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://iteverydaybro.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux CentOS 7" scheme="https://iteverydaybro.github.io/tags/Linux-CentOS-7/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS 7 安装 Docker</title>
@@ -467,56 +523,6 @@
     
     
       <category term="Abp" scheme="https://iteverydaybro.github.io/tags/Abp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode-one</title>
-    <link href="https://iteverydaybro.github.io/2019/10/31/leetcode-one/"/>
-    <id>https://iteverydaybro.github.io/2019/10/31/leetcode-one/</id>
-    <published>2019-10-31T15:05:46.000Z</published>
-    <updated>2019-10-31T15:12:08.749Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><h1 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution, and you may not use the sameelement twice.<br>Example:<br>Given nums = [2, 7, 11, 15], target = 9,</p><p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p><h2 id="解体思路"><a href="#解体思路" class="headerlink" title="解体思路"></a>解体思路</h2><h2 id="解体方法"><a href="#解体方法" class="headerlink" title="解体方法"></a>解体方法</h2><h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0;i&lt;nums.Length;i++)&#123;</span><br><span class="line">for(var j=0;j&lt;nums.length;i++)&#123;</span><br><span class="line">if(nums[j]== target-nums[i])</span><br><span class="line">&#123;</span><br><span class="line">return new int[i,j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">throw new Exception(&quot;No two sum solution&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ht = new Hashtable();</span><br><span class="line">for(var i=0;i&lt;nums.Length,i++)&#123;</span><br><span class="line">var result = target-nums[i];</span><br><span class="line">if(ht.ContainsKey(result)&#123;</span><br><span class="line">return new int[]&#123;(int)ht[result],i&#125;</span><br><span class="line">&#125;</span><br><span class="line">if(!ht.containsKey(nums[i]))</span><br><span class="line">ht.Add(nums[i],i);</span><br><span class="line">&#125;</span><br><span class="line">throw new Exception(&quot;No two sum solution&quot;);</span><br></pre></td></tr></table></figure><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def twoSum(self,nums,target):</span><br><span class="line">for i in range(len(nums)):</span><br><span class="line">for j in range(i+1,len(nums)):</span><br><span class="line">if nums[j] == target - nums[i]:</span><br><span class="line">return [i,j]</span><br><span class="line">raise Exception(&quot;No two sum solution&quot;)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def towSum(self,nums,target):</span><br><span class="line">var result_dict = &#123;&#125;</span><br><span class="line">for i in range(len(nums)):</span><br><span class="line">if nums[i] in result_dict:</span><br><span class="line">return [result_dict[nums[i]],i]</span><br><span class="line">else:</span><br><span class="line">result_dict[target-nums[i]]=i</span><br><span class="line">raise Exception(&quot;No two sum solution&quot;)</span><br></pre></td></tr></table></figure><h3 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public int[] twoSum(int[] nums,int target)&#123;</span><br><span class="line">for(in i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">for(int j=i;j&lt;nums.length;j++)&#123;</span><br><span class="line">if(nums[j]==target-nums[i])&#123;</span><br><span class="line">return new int[]&#123;i,j&#125;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">throw new IllegalArgumentException(&quot;No two sum solution&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public int[] twoSum(int[] nums,int target)&#123;</span><br><span class="line">Map&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">for(int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">map.put(nums[i],i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">int result = target-nums[i];</span><br><span class="line">if(map.ContainsKey(result)&amp;&amp;map.get(result)!=i)&#123;</span><br><span class="line">return new int[]&#123;i,map.get(result)&#125;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">throw new IllegalArgumentExcetpion(&quot;No two sum solution&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public int[] twoSum(int[] nums,int target)&#123;</span><br><span class="line">    Map&lt;Integer,Integert&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    for(int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">        int result = target-nums[i];</span><br><span class="line">        if(map.ContainsKey(result))</span><br><span class="line">        return new int[]&#123;map.get(result),i&#125;;</span><br><span class="line">        map.put(nums[i],i);</span><br><span class="line">    &#125;</span><br><span class="line">throw new IllegalArgumentExcetption(&quot;No two sum solution&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;h1 id=&quot;第一题&quot;&gt;&lt;a href=&quot;#第一题&quot; class=&quot;headerlink&quot; title=&quot;第一题&quot;&gt;&lt;/a&gt;第一
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://iteverydaybro.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://iteverydaybro.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>http protocol one</title>
-    <link href="https://iteverydaybro.github.io/2019/10/31/http-protocol-one/"/>
-    <id>https://iteverydaybro.github.io/2019/10/31/http-protocol-one/</id>
-    <published>2019-10-31T15:00:02.000Z</published>
-    <updated>2019-10-31T15:10:45.338Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><h1 id="为什么学些HTTP协议"><a href="#为什么学些HTTP协议" class="headerlink" title="为什么学些HTTP协议"></a>为什么学些HTTP协议</h1><p>1.很多WEB开发真的不理解HTTP<br>2.HTTP真的很重要<br>3.提升自身价值</p><p>#<br>Redirect==》App cache ==&gt; DNS ==&gt; TCP ==&gt;Request ==&gt; Response</p><h1 id="网络协议层"><a href="#网络协议层" class="headerlink" title="网络协议层"></a>网络协议层</h1><p>经典五层模型：应用层（HTTP FTP）  传输层（TCP UDP）  网络层 数据链路层 物理层 客户端</p><p>物理层：主要作用是定义物理设备如何传输数据。<br>数据链路层：主要作用是在通信的实体间建立数据链路连接<br>网路层：主要作用是为数据在节点之间传输创建逻辑链路；<br>传输层：向用户提供可靠的端对端（End-to-End）的服务，传输层向高层屏蔽了下层数据通信的细节。<br>TCP/IP协议：<br>UDP协议<br>应用层：为应用软件提供了很多服务构建TCP协议之上，屏蔽网路传输相关细节。</p><h1 id="HTTP协议的发展历史"><a href="#HTTP协议的发展历史" class="headerlink" title="HTTP协议的发展历史"></a>HTTP协议的发展历史</h1><p>1.HTTP/0.9:只有一个GET请求 。  没有HEADER等描述数据的信息 。  服务器发送完毕，就关闭TCP连接。<br>2.HTTP/1.0:增加了很多命令 增加status code和header 多字符集支持 多部分发送 权限 缓存等<br>3.HTTP/1.1:持久连接 。 pipeline：发送多个请求 增加host和其他一些命令<br>4.HTTP2:所有数据以二进制传输  同一个连接里面发送多个请求不再需要按照顺序来<br>头信息压缩以及推送等提高效率的功能。</p><h1 id="TCP负责HTTP与服务器之间的连接"><a href="#TCP负责HTTP与服务器之间的连接" class="headerlink" title="TCP负责HTTP与服务器之间的连接"></a>TCP负责HTTP与服务器之间的连接</h1><p>三次握手：为了防止服务端开启无用的连接，规避因为网络延迟而导致的服务器的开销的问题。<br>winshark？网络抓包工具</p><p>URI：Uniform Resource Identifier/统一资源标志符 用来唯一标识互联网上的信息资源  包括URL和URN<br>URL：Uniform Resource Locator统一资源定位器<br>URN：永久统一资源定位符，在资源移动之后还鞥被找到，目前还没有成熟的解决方案。</p><h1 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h1><h2 id="请求报文："><a href="#请求报文：" class="headerlink" title="请求报文："></a>请求报文：</h2><p>首行：1.Method（GET POST DELETE等）2.请求地址 3.服务版本</p><h2 id="响应报文："><a href="#响应报文：" class="headerlink" title="响应报文："></a>响应报文：</h2><p>首行：1.版本2.Http Code</p><h2 id="HTTP方法：用来定义对资源的操作"><a href="#HTTP方法：用来定义对资源的操作" class="headerlink" title="HTTP方法：用来定义对资源的操作"></a>HTTP方法：用来定义对资源的操作</h2><p>常用的GET POST等 从定义上讲有各自的语义</p><h2 id="HTTP-CODE"><a href="#HTTP-CODE" class="headerlink" title="HTTP CODE"></a>HTTP CODE</h2><p>定义服务器对请求的处理结果 各个区间的CODE有各自的语义<br>好的HTTP服务可以通过CODE判断结果</p><h1 id="curl-帮助我们发送请求-返回请求结果"><a href="#curl-帮助我们发送请求-返回请求结果" class="headerlink" title="curl  帮助我们发送请求 返回请求结果"></a>curl  帮助我们发送请求 返回请求结果</h1><p>CORS 预请求<br>跨域允许的方法：GET HEAD POST<br>允许Content-type<br>text/plain<br>multipart/form-data<br>application/x-www-form-urlencoded<br>其他限制：<br>请求头的限制<br>XMLHttpRequestUpload对象均没有注册任何事件监听器<br>请求中没有使用ReadableStream对象</p><h1 id="缓存：可缓存性"><a href="#缓存：可缓存性" class="headerlink" title="缓存：可缓存性"></a>缓存：可缓存性</h1><p>public<br>private<br>no-cache：经过服务器端验证后，才能使用的<br>到期：<br>max-age=<seconds><br>s-maxage=<seconds><br>max-stale=<seconds><br>重新验证：<br>must-revalidate<br>proxy-revalidate<br>其他：<br>no-store：只能去服务器获取数据<br>no-transform：不允许改动返回的数据内容<br>缓存验证Last-Modified和Etag的使用</seconds></seconds></seconds></p><p>Etag：<br>数据签名：hash计算<br>配合If-Match或者If-Non-Match使用</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;h1 id=&quot;为什么学些HTTP协议&quot;&gt;&lt;a href=&quot;#为什么学些HTTP协议&quot; class=&quot;headerlink&quot; ti
-      
-    
-    </summary>
-    
-      <category term="HTTP Protocal" scheme="https://iteverydaybro.github.io/categories/HTTP-Protocal/"/>
-    
-    
-      <category term="HTTP Protocol" scheme="https://iteverydaybro.github.io/tags/HTTP-Protocol/"/>
     
   </entry>
   
