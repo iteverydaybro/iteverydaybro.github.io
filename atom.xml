@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iteverydaybro.github.io/"/>
-  <updated>2020-01-14T16:24:00.878Z</updated>
+  <updated>2020-03-23T16:09:19.106Z</updated>
   <id>https://iteverydaybro.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker</title>
+    <link href="https://iteverydaybro.github.io/2020/03/21/Docker/"/>
+    <id>https://iteverydaybro.github.io/2020/03/21/Docker/</id>
+    <published>2020-03-21T15:38:02.000Z</published>
+    <updated>2020-03-23T16:09:19.106Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>本文主要介绍了Docker相关的知识体系</p><h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><h3 id="什么是容器"><a href="#什么是容器" class="headerlink" title="什么是容器"></a>什么是容器</h3><p>容器与虚拟机</p><p>容器：应用程序本身，依赖：比如应用程序需要的库或者其他软件<br>区别：容器在Host操作系统的用户空间运行，与操作系统其他进程隔离。这一点显著区别于虚拟机。<br>传统的虚拟化技术，比如VMWare，KVM，Xen，目标是创建完整的虚拟机。为了运行应用，除了部署应用本身及其依赖，还得安装整个操作系统。<br>由于所有的容器共享同一个HostOS，这使得容器在体积上要比虚拟机小很多。另外，启动容器不需要启动整个操作系统，所以容器部署和启动速度更快，开销更小，也更容器迁移。</p><h3 id="为什么需要容器"><a href="#为什么需要容器" class="headerlink" title="为什么需要容器"></a>为什么需要容器</h3><p>容器使软件具备了超强的可移植能力</p><h4 id="容器解决的问题：如何让每种服务能够在所有的部署环境汇中顺利进行"><a href="#容器解决的问题：如何让每种服务能够在所有的部署环境汇中顺利进行" class="headerlink" title="容器解决的问题：如何让每种服务能够在所有的部署环境汇中顺利进行"></a>容器解决的问题：如何让每种服务能够在所有的部署环境汇中顺利进行</h4><p>Docker将集装箱思想运用到软件打包上，为代码提供了一个基于容器的标准化运输系统。Docker可以将任何应用及其依赖打包成一个轻量级 可移植 自包含的容器。<br>容器可以运行在几乎所有的操作系统上。</p><h4 id="容器的特性"><a href="#容器的特性" class="headerlink" title="容器的特性"></a>容器的特性</h4><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd2ihwzkpmj30m3092gqa.jpg" alt><br>容器的优势：<br>开发人员：Build Once，Run Anywhere<br>容器意味着环境隔离和可重复性。开发人员只需为应用创建一次运行环境，然后打包成容器镜像便可以在其他机器上运行。另外，容器环境与所在的Host环境是隔离的，就像虚拟机一样，但更快更简单。</p><p>运维人员：Configure Once，Run Anywhere<br>只需要配置好标准的runtime环境，服务器就可以运行任何容器。这使得运维人员的工作便的更高效，一致和可重复。容器消除了开发 测试 生成环境的不一致性。</p><h3 id="容器是如何工作的"><a href="#容器是如何工作的" class="headerlink" title="容器是如何工作的"></a>容器是如何工作的</h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd2indwvpsj30bz062jt0.jpg" alt></p><h4 id="Docker的核心组件包括"><a href="#Docker的核心组件包括" class="headerlink" title="Docker的核心组件包括"></a>Docker的核心组件包括</h4><p>Docker客户端-Client</p><p>最常用的Docker客户端是Docker命令。通过Docker我们可以方便的在Host上构建和运行容器</p><p>Docker服务器-Docker daemon</p><p>以Linux后台服务的方式运行，运行在Docker Host上，负责创建 运行 监控容器 构建 存储镜像。<br>默认配置下，Docker daemon只能响应来自本地的Host的客户端请求。如果要允许远程客户端请求，需要在配置文件中打开TCP监听。</p><p>Docker镜像-Image</p><p>Docker镜像是只读模版，通过它可以创建Docker容器<br>镜像有很多生成方法：可以从无到有开始创建镜像<br>也可以下载并使用别人创建好的现成的镜像<br>还可以在现有镜像上创建新的镜像</p><p>我们可以将镜像的内容和创建步骤描述在一个文本文件中。这个文件被称为Dockerfile，通常执行docker build <dockerfile> 命令可以构建出Docker镜像</dockerfile></p><p>Docker容器-Container</p><p>Docker容器就是Docker镜像的运行实例。<br>用户可以通过Cli或是API启动 停止 移动或删除容器。可以这么认为，对于应用软件，镜像是软件生命周期的构建和打包阶段，而容器则是启动和运行阶段。</p><h3 id="容器的启动"><a href="#容器的启动" class="headerlink" title="容器的启动"></a>容器的启动</h3><p>Docker客户端执行docker run命令。<br>Docker daemon发现本地没有httpd镜像。<br>daemon从Docker Hub下载镜像<br>下载完成，镜像httpd被保存在本地。<br>Docker daemon启动容器</p><h4 id="Registry"><a href="#Registry" class="headerlink" title="Registry"></a>Registry</h4><p>Registry是存放Docker镜像的仓库，Registry分为私有和共有两种。<br>docker pull命令可以从Registry下载镜像。<br>docker run 命令则是先下载镜像（如果本地没有）然后在启动容器。</p><h2 id="容器的核心知识"><a href="#容器的核心知识" class="headerlink" title="容器的核心知识"></a>容器的核心知识</h2><p>Docker现在几乎是容器的代名词，容器核心技术是指能够让Container再Host上运行起来的那些技术</p><h3 id="容器规范"><a href="#容器规范" class="headerlink" title="容器规范"></a>容器规范</h3><p>容器不光是Docker，还有其他容器，比如CoreOS的rkt。为了保证容器生态的健康发展，保证不同容器之间能够兼容，包含Docker CoreOS Google在内的若干公司共同成立了一个叫Open Container Initiative（OCI）的组织，其目的是制定开放的容器规范。</p><h3 id="容器runtime"><a href="#容器runtime" class="headerlink" title="容器runtime"></a>容器runtime</h3><p>Java程序就好比容器，JVM则好比runtime，JVM为Java程序提供运行环境。同样的道理，容器只有在runtime中才能运行。</p><p>lxc是Linux上老牌的容器runtime。Docker最初也是用lxc作为runtime<br>runc是Docker自己开发的容器runtime，符合oci规范，也是现在Docker的默认runtime。<br>rkt是CoreOS开发的容器runtime，符合oci规范，因而能够运行Docker容器。</p><h3 id="容器管理工具"><a href="#容器管理工具" class="headerlink" title="容器管理工具"></a>容器管理工具</h3><p>光有runtime还不够，用户得有工具来管理容器。容器管理工具对内与runtime交互，对外为用户提供interface，比如cli。这就好比除了JVM，还提供了java命令让用户能够起停应用。<br>lxd是lxc对应的管理工具<br>runc的管理工具是docker engine。docker engine包含后台deamon和cli两个部分。我们通常提到的Docker，一般是指docker engine。<br>rkt的管理工具是rkt cli</p><h3 id="容器定义工具"><a href="#容器定义工具" class="headerlink" title="容器定义工具"></a>容器定义工具</h3><p>容器定义工具允许用户定义容器的内容和属性，这样容器就能够被保存，共享和重建。<br>容器定义工具主要有：docker image dockerfile ACI（App Container Image）<br>docker image：是docker容器的模板，runtime依据docker image创建容器<br>dockerfile：包含了若干命令的文本文件，通过这些命令创建出docker image<br>ACI（App Container Image）与docker image类似，只不过它是由CoreOS开发的rkt容器的image格式。</p><h3 id="5-Registry"><a href="#5-Registry" class="headerlink" title="5.Registry"></a>5.Registry</h3><p>容器是通过image创建的，需要有一个仓库来统一存放image，这个仓库叫Registry<br>主要有Docker Registry Docker Hub Quay.io<br>Docker Registry：企业构建私有的Registry<br>Docker Hub：Docker为公众托管的Registry，上面有很多现成的image，为docker用户提供了极大的方便。<br>Quay.io：另一个公共托管Registry，提供与Docker Hub类似的服务。</p><h3 id="6-容器OS"><a href="#6-容器OS" class="headerlink" title="6.容器OS"></a>6.容器OS</h3><p>由于有容器runtime，几乎所有的Linux MAC OS和Windows都可以运行容器。但这并不妨碍容器OS的问世。<br>主要有CoreOS atomic和ubuntu core几个杰出的代表<br>容器OS是专门运行容器的操作系统。与常规OS相比，容器OS通常体积更小，启动更快。因为是为容器定制的OS，通常它们运行容器的效率会更高。</p><h3 id="容器平台技术"><a href="#容器平台技术" class="headerlink" title="容器平台技术"></a>容器平台技术</h3><p>容器核心技术使得容器能够在单个Host上运行。而容器平台技术能够容容器作为集群在分布式环境中运行。</p><h4 id="容器编排引擎"><a href="#容器编排引擎" class="headerlink" title="容器编排引擎"></a>容器编排引擎</h4><p>基于容器的应用一般会采用微服务架构。在这种架构下，应用被划分为不同的组件，并以服务的形式运行在各自的容器中，通过API对外提供服务。为了保证应用的高可用，每个组件都可能会运行多个相同的容器。这些容器会组成集群，集群中的容器会根据业务需要被动态的创建 迁移和销毁</p><p>这样一个基于微服务架构的应用系统实际上是一个动态的可伸缩的系统。这对我们的部署环境提出了新的要求，我们需要一种高效的方法来管理容器集群。而这就是容器编排引擎需要做的工作。</p><h5 id="Docker-swarm"><a href="#Docker-swarm" class="headerlink" title="Docker swarm"></a>Docker swarm</h5><p>docker swarm是Docker开发的容器编排引擎。</p><h5 id="kubernetes"><a href="#kubernetes" class="headerlink" title="kubernetes"></a>kubernetes</h5><p>kubernets是Google领导开发的开源容器编排引擎，同时支持Docker和CoreOS容器</p><h5 id="mesos-marathon"><a href="#mesos-marathon" class="headerlink" title="mesos+marathon"></a>mesos+marathon</h5><p>mesos是一个通用的集群资源调度平台，mesoso与marathon一起提供容器编排引擎功能。</p><h4 id="容器管理平台"><a href="#容器管理平台" class="headerlink" title="容器管理平台"></a>容器管理平台</h4><p>容器管理平台是架构在容器编排引擎之上的一个更为通用的平台。通常容器管理平台能够支持多种编排引擎，抽象了编排引擎的底层实现细节，为用户提供更方便的功能，比如application catalog和一键应用部署等</p><p>主要有Rancher与ContainerShip管理平台</p><h4 id="基于容器的PaaS"><a href="#基于容器的PaaS" class="headerlink" title="基于容器的PaaS"></a>基于容器的PaaS</h4><p>基于容器的PaaS为微服务应用开发人员和公司提供了开发 部署和管理应用的平台，使用户不必关心底层基础设施而专注于应用的开发。</p><h3 id="容器支持技术"><a href="#容器支持技术" class="headerlink" title="容器支持技术"></a>容器支持技术</h3><h4 id="容器网路"><a href="#容器网路" class="headerlink" title="容器网路"></a>容器网路</h4><p>容器的出现使网络拓扑变得更加动态和复杂。用户需要专门的解决方案来管理容器与容器，容器与其他实体之间的连通性和隔离型性。</p><p>docker networ flannel weave calico</p><h4 id="服务发现"><a href="#服务发现" class="headerlink" title="服务发现"></a>服务发现</h4><p>动态变化是微服务应用的一大特点。当负载增加时，集群会自动创建新的容器；负载减小，多余的容器会被销毁。容器也会根据Host的资源使用情况在不同的Host中迁移，容器的IP和端口也会随之发生变化。</p><p>在这种动态的环境下，必须要有一种机制让client能够知道如何访问容器提供的服务。这就是服务发现技术要完成的工作。</p><p>服务发现会保存容器集群中所有的微服务最新的信息，比如IP和端口，并对外提供API，提供服务查询功能。</p><p>主要有etcd consul zookeeper代表</p><h4 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h4><p>监控对于基础架构非常重要，而容器的动态特征对于监控提出更多的挑战。<br>docker ps/top/stats，docker stats API，sysdig，cAdvisor/Heapster，Weave Scope</p><h4 id="数据管理"><a href="#数据管理" class="headerlink" title="数据管理"></a>数据管理</h4><p>容器经常会出现不同的host之间的迁移，如何保证持久化数据也能够动态迁移，是Flocker这类数据管理工具提供的能力。</p><h4 id="日志管理"><a href="#日志管理" class="headerlink" title="日志管理"></a>日志管理</h4><p>docker logs是Docker原生的日志工具。而logsout对日志提供了路由功能，它可以收集不同容器的日志并转发给其他工具进行处理。</p><h4 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h4><p>OpenSCAP能够对容器镜像进行扫描，发现潜在的漏洞</p><h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p>容器是镜像的运行实例，有了镜像才能启动容器</p><h3 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><p>Dockerfile是镜像的描述文件，定义了如何构建Docker镜像。Dockerfile的语法简洁且可读性强</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM scratch </span><br><span class="line">COPY hello /</span><br><span class="line">CMD [&quot;/hello&quot;]</span><br></pre></td></tr></table></figure><p>此镜像是从0开始构建。</p><p>将文件“hello”复制到镜像的根目录。</p><p>容器启动时，执行/hello</p><h3 id="base镜像"><a href="#base镜像" class="headerlink" title="base镜像"></a>base镜像</h3><p>能成为base镜像的通常都是各种Linux发行版的Docker镜像，比如Ubuntu，Debian，CentOS</p><p>Linux操作系统由内核空间和用户空间组成</p><p>内核空间是kernel，linux刚启动时会加载bootfs文件系统，之后bootf会被卸载掉。</p><p>用户空间的文件系统是rootfs，包含我们熟悉的/的v，/proc，/bin等目录</p><p>对于base镜像来说，底层直接用Host的kernel，自己只需要提供rootfs就行了</p><p>而对于一个精简的OS，rootfs可以很小，必须要包括最基本的命令，工具和程序库就可以了。相比其他Linux发行版，CentOS的rootfs已经算臃肿的了，alpine还不到10MB。</p><p>我们平时安装的CentOS除了rootfs还会选装很多软件，服务，图形桌面，需要好几个GB就不足为奇了。</p><p>不同的Linux发行版的区别主要就是rootfs</p><p>Docker可以同时支持多种Linux镜像，模拟出多种操作系统环境。</p><p>上层提供各自的rootfs，底层共用Docker Host的kernel</p><p>容器只能使用Host的kernel，并且不能修改</p><p>所有容器都共用Host的kernel，在容器中没办法对kernel升级。</p><h3 id="构建镜像原理"><a href="#构建镜像原理" class="headerlink" title="构建镜像原理"></a>构建镜像原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM debian</span><br><span class="line">RUN apt-get install emacs</span><br><span class="line">RUN apt-get install apache2</span><br><span class="line">CMD [&quot;/bin/bash]</span><br></pre></td></tr></table></figure><p>在Debian base镜像上构建<br>安装emacs编辑器<br>安装apache2<br>容器启动时云心bash</p><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd2ki6zju3j30a4037myc.jpg" alt></p><p>可以看到，新镜像是从base镜像一层一层叠加生成的。 没安装一个软件，就在现有镜像的基础上增加一层。</p><p>最大的好处就是共享资源</p><p>有多个镜像从相同的base镜像构建而来，那么Docker Host只需在磁盘上保存一份base镜像；同时内存中也只需加载一份base镜像，就可以为所有的容器服务了。而且镜像的每一层都可以被共享。</p><h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><p>几乎所有常用的数据库 中间件 应用软件等都有现成的Docker官方镜像或其他人和组织创建的镜像，我们只需要稍作配置就可以直接使用。</p><p>两种构建方式：</p><p>docker commit命令</p><p>运行容器，修改容器，将容器保存为新的镜像</p><p>这是一种手工创建镜像的方式，容易出错，效率低且可重复性弱。比如要在debian base镜像中也加入vi，还得重复之前的所有步骤。</p><p>Docker并不建议用户通过这种方式构建镜像</p><p>Dockerfile构建文件</p><p>1.当前目录为/root<br>2.Dockerfile准备就绪<br>3.运行docker build命令，-t将新镜像命名为ubuntu-with-vi-dockerfile，命令末尾的.指明build content为当前目录。Docker默认会从build content中查找Dockerfile文件，我们也可以通过-f参数指定Dockerfile的位置<br>4.从这个步骤开始就是镜像真正的构建过程。首页Docker将build context中的所有文件发送给Docker daemon。build context为镜像构建所需要的文件或目录。<br>Dockerfile中的ADD COPY等命令可以将build context中的文件添加到镜像。此例中，build context为当前目录/root，该目录下的所有文件和子目录都会发送给Docker daemon。<br>所以使用build context就的小心了，不要将多余文件放到build context，特别不要将/usr最为build context，否则构建过程会相当缓慢甚至失败。<br>5.执行FROM，将ubuntu作为base镜像。<br>6.执行RUN，安装vim<br>7.启动临时容器，在容器中通过apt-get安装vim<br>8.安装成功后，将容器保存为镜像<br>9.删除临时镜像<br>10.镜像构建成功</p><h3 id="Dockerfile构建过程"><a href="#Dockerfile构建过程" class="headerlink" title="Dockerfile构建过程"></a>Dockerfile构建过程</h3><p>1.从base镜像运行一个容器<br>2.执行一条指令，对容器做修改<br>3.执行类似docker commit操作，生成一个新的镜像<br>4.Docker再基于刚刚提交的镜像运行一个新容器<br>5.重复2-4步，直到Dockerfile中的所有指令执行完毕</p><h3 id="Dockerfile命令"><a href="#Dockerfile命令" class="headerlink" title="Dockerfile命令"></a>Dockerfile命令</h3><p>1.FROM 指定base镜像<br>2.COPY 将文件从build context复制到镜像<br>3.ADD 与COPY类似，从build context复制文件到镜像。不同的是，如果src是归档文件（tar zip tgz xz等），文件会被自动解压到dest<br>4.ENV 设置环境变量，环境变量可以被后面的指令所使用<br>5.EXPOSE 指定容器中的进程会监听某个端口，Docker可以将该端口暴漏出来<br>6.VOLUME 将文件或目录声明为volume<br>7.WORKDIR 为后面的RUN CMD ENTRYPOINT ADD或COPY指令设置镜像中的当前工作目录<br>8.RUN 在容器中运行指定的命令<br>9.CMD 容器启动时运行指定的命令。Dockerfile中可以多个CMD指令，但只有最后一个生效。CMD可以被docker run之后的参数替换。</p><h2 id="Docker-Registry"><a href="#Docker-Registry" class="headerlink" title="Docker Registry"></a>Docker Registry</h2><p>1.首先需要在Docker Hub上注册账号<br>2.在Docker Host上登录<br>3.修改镜像的repository使之与Docker Hub账号匹配<br>4.通过docker push将镜像上传到Docker Hub<br>5.这个镜像可被其他Docker Host下载使用了</p><h2 id="Docker常用操作子命令"><a href="#Docker常用操作子命令" class="headerlink" title="Docker常用操作子命令"></a>Docker常用操作子命令</h2><p>1.images 显示镜像列表<br>2.history 显示镜像构建历史<br>3.commit 从容器创建新镜像<br>4.build 从Dockerfile构建镜像<br>5.tag 给镜像打tag<br>6.pull 从registry下载镜像<br>7.push 将镜像上传到registry<br>8.rmi 删除Docker Host中的镜像<br>9.search 搜索Docker Hub中的镜像</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;p&gt;本文主要介绍了Docker相关的知识体系&lt;/p&gt;
+&lt;h2 id=&quot;容器&quot;&gt;&lt;a href=&quot;#容器&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://iteverydaybro.github.io/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://iteverydaybro.github.io/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux Ubuntu Docker Redis 配置文件启动以及数据持久化</title>
@@ -500,29 +526,6 @@
     
     
       <category term="Redis" scheme="https://iteverydaybro.github.io/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>abp-one</title>
-    <link href="https://iteverydaybro.github.io/2019/10/31/abp-one/"/>
-    <id>https://iteverydaybro.github.io/2019/10/31/abp-one/</id>
-    <published>2019-10-31T15:12:45.000Z</published>
-    <updated>2019-11-01T00:39:46.959Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><h1 id="Abp的搭建"><a href="#Abp的搭建" class="headerlink" title="Abp的搭建"></a>Abp的搭建</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;本文说明&quot;&gt;&lt;a href=&quot;#本文说明&quot; class=&quot;headerlink&quot; title=&quot;本文说明&quot;&gt;&lt;/a&gt;本文说明&lt;/h1&gt;&lt;h1 id=&quot;Abp的搭建&quot;&gt;&lt;a href=&quot;#Abp的搭建&quot; class=&quot;headerlink&quot; title=&quot;Abp的搭
-      
-    
-    </summary>
-    
-    
-      <category term="Abp" scheme="https://iteverydaybro.github.io/tags/Abp/"/>
     
   </entry>
   
